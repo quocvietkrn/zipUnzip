@@ -10,7 +10,7 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 
-public class FileCompressionModel {
+ public class FileCompressionModel {
 
     //check 
     public int checkIntLimit(int min, int max) {
@@ -79,9 +79,9 @@ public class FileCompressionModel {
         }
     }
 
-    public boolean compressTo(String sourceFile, String fileZipName, String pathCompress)
+    public static boolean compressTo(String sourceFile, String fileZipName, String pathCompress)
             throws IOException {
-        // String sourceFile = pathSrc; // Remove this line
+        
         String nameFos = pathCompress + "/" + fileZipName + ".zip";
         FileOutputStream fos = new FileOutputStream(nameFos);
         ZipOutputStream zipOut = new ZipOutputStream(fos);
@@ -100,8 +100,8 @@ public class FileCompressionModel {
         return true;
     }
 
-    public boolean extractTo(String pathExtract, String pathExtract1) throws IOException {
-        String fileZip = pathZipFile; // Use the class member pathZipFile
+    public static boolean extractTo(String pathExtract, String pathExtract1) throws IOException {
+        String fileZip = "C:\\Users\\ADMIN\\Documents\\GitHub\\zipUnzip\\src\\model\\test2.exe"; // Use the class member pathZipFile
         byte[] buffer = new byte[1024];
         ZipInputStream zis = new ZipInputStream(new FileInputStream(fileZip));
         ZipEntry zipEntry = zis.getNextEntry();
